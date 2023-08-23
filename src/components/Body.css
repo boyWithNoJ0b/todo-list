@@ -1,0 +1,14 @@
+.Body {
+  padding: 20px;
+}
+
+.todo-input {
+  min-width: 50%;
+  min-height: 50px;
+  width: fit-content;
+}
+
+.add-btn {
+  height: 50px;
+  width: 50px;
+}

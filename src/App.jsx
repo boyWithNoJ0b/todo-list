@@ -1,12 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import TodoTable from "./components/TodoTable";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 function App() {
   return (
     <>
-      <h1>todo-list</h1>
-      <TodoTable />
+      <div className="container">
+        <Header />
+        <Body />
+      </div>
     </>
   );
 }
