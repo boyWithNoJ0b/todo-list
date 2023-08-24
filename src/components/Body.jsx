@@ -2,6 +2,7 @@ import "./Body.css";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
+
 export default function Body() {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
@@ -46,6 +47,17 @@ export default function Body() {
     });
   };
 
+
+  // for adding items in the todo list by clicking 'Enter' key
+  const handleKeyDown = (event) => {
+    if(event.key === "Enter") {
+      const button = document.getElementsByClassName("add-btn")
+      button[0].click()
+    }
+  }
+  
+  
+
   return (
     <div className="Body">
       <div className="input-container">
@@ -54,6 +66,7 @@ export default function Body() {
           className="todo-input"
           value={newItem}
           onChange={(e) => setNewItem(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <button className="add-btn" onClick={() => addItem()}>
           ADD

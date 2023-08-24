@@ -24,18 +24,33 @@
   min-height: 50px;
   width: fit-content;
   font-size: 25px;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 500;
 }
 
 .add-btn {
-  height: 50px;
-  width: 50px;
+  height: 49px;
+  width: 49px;
+  border: none;
+  align-self: center;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 600;
 }
-
+.add-btn:hover {
+  border-radius: 0 15px 15px 0;
+  background-color: lightgray;
+  transition:  background-color 0.5s, border-radius 0.2s;
+}
+.add-btn:active {
+  border-top: 1px solid gray;
+  border-left: 1px solid gray;
+}
 
 .todo-item {
     display: flex;
     flex-direction: row;
-    gap: 10px
+    gap: 10px;
+    justify-content: center;
 }
 
 .todo-item li {
