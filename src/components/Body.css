@@ -5,18 +5,18 @@
 }
 
 .input-container {
-    display: flex;
-    align-self: center;
-    width: 100%;    
-    justify-content: center;
+  display: flex;
+  align-self: center;
+  width: 100%;
+  justify-content: center;
 }
 
 .Body ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  color: white;
 }
 
 .todo-input {
@@ -24,7 +24,7 @@
   min-height: 50px;
   width: fit-content;
   font-size: 25px;
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: 500;
 }
 
@@ -33,13 +33,13 @@
   width: 49px;
   border: none;
   align-self: center;
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
   font-weight: 600;
 }
 .add-btn:hover {
   border-radius: 0 15px 15px 0;
   background-color: lightgray;
-  transition:  background-color 0.5s, border-radius 0.2s;
+  transition: background-color 0.5s, border-radius 0.2s;
 }
 .add-btn:active {
   border-top: 1px solid gray;
@@ -47,28 +47,29 @@
 }
 
 .todo-item {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
 }
 
 .todo-item li {
-    display: inline-block;
-    width: 80%;
-    border: 2px solid gray;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 30px;
+  display: inline-block;
+  width: 80%;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30px;
 }
 
 .todo-item li:hover {
-    background-color: rgba(127, 255, 212, 0.3);
+  background-color: rgba(127, 255, 212, 0.3);
 }
 
 .todo-item button {
-    width: 40px;
-    height: 40px;
-    align-self: center;
+  width: fit-content;
+  min-width: 40px;
+  height: 40px;
+  align-self: center;
 }
 

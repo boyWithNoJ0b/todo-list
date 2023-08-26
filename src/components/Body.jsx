@@ -14,7 +14,7 @@ export default function Body() {
     }
 
     setItems((odlItems) => {
-      return [...odlItems, { text: newItem, id: uuid(), isDone: false }];
+      return [...odlItems, { text: newItem, id: uuid(), isDone: false, isEditing: false }];
     });
 
     setNewItem("");
@@ -55,6 +55,31 @@ export default function Body() {
       button[0].click()
     }
   }
+
+
+  //helper function that return boolean value
+  const isEditingAndIsDone = (item) => {
+    return !item.isEditing && item.isDone;
+  }
+  
+
+  //for editing the added item
+  const editItem = (id) => {
+    setItems((oldItems) => {
+      const editedItems = oldItems.map(item => {
+        if(item.id === id){
+          return {
+            ...item,
+            isEditing: !item.isEditing,
+            isDone: false,
+          } 
+        } else {
+          return item
+        }
+      })
+      return editedItems;
+    })
+  }
   
   
 
@@ -77,14 +102,17 @@ export default function Body() {
           return (
             <div key={i.id} className="todo-item">
               <li
+                key={i.id}
+                contentEditable={i.isEditing}
                 style={{
-                  textDecoration: i.isDone && "line-through",
-                  fontStyle: i.isDone && "italic",
+                  textDecoration: isEditingAndIsDone(i) && "line-through",
+                  fontStyle: isEditingAndIsDone(i) && "italic",
                 }}
                 onClick={() => markAsDone(i.id)}>
                 {i.text}
               </li>
               <button onClick={() => deleteItem(i.id)}>❌</button>
+              <button onClick={() => editItem(i.id)} >{i.isEditing ? "EDITING" : "EDIT"}</button>
             </div>
           );
         })}
