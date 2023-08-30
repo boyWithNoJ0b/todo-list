@@ -107,10 +107,18 @@ export default function Body() {
                 style={{
                   textDecoration: isEditingAndIsDone(i) && "line-through",
                   fontStyle: isEditingAndIsDone(i) && "italic",
+                  position: "relative",
                 }}
                 onClick={() => markAsDone(i.id)}>
                 {i.text}
               </li>
+              <span style={{
+                  fontSize: "18px",
+                  position: "absolute",
+                  contentEditable: "false",
+                  right: "180px",
+                  top: "3px"
+                }}>{i.isEditing && "Edit items content here"}</span>
               <button onClick={() => deleteItem(i.id)}>❌</button>
               <button onClick={() => editItem(i.id)} >{i.isEditing ? "EDITING" : "EDIT"}</button>
             </div>

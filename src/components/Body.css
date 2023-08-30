@@ -51,6 +51,7 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+  position: relative;
 }
 
 .todo-item li {
@@ -73,3 +74,7 @@
   align-self: center;
 }
 
+.edit-paceholder {
+  font-size: 10px;
+  color: red
+}
